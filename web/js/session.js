@@ -130,6 +130,7 @@ const Session = (() => {
     showPane('start');
     setReady(false);
     startError('');
+    await window.TelegramMiniApp?.ready; // inside Telegram: waits for the auto sign-in attempt to land (or fail) first
     try { cfg = await loadConfig(); } catch { showError(t('err_server_down')); return; }
     App.applyConfig(cfg);
     // Phone + password does not need Firebase, so a returning member is let in (and a new one can sign up) even when Google's
@@ -215,7 +216,11 @@ const Session = (() => {
   function showSignup() {
     if ($('auth-pane-complete-profile').classList.contains('hidden')) {
       ['phone', 'tg', 'contact-email'].forEach((k) => { const el = $(`gate-request-${k}`); if (el) el.value = ''; });
-      $('gate-request-name').value = me.name || '';
+      // Telegram gives us a display name + @handle straight away (see telegram-miniapp.js); a plain Google/e-mail
+      // sign-up has none of this, so `me.name` (from Firebase) still wins when it is present.
+      const tg = U.store.get('sng.tgProfile', null);
+      $('gate-request-name').value = me.name || tg?.name || '';
+      if (tg?.username) $('gate-request-tg').value = `@${tg.username}`;
       $('request-error').classList.add('hidden');
     }
     $('gate-request-email').value = me.login;

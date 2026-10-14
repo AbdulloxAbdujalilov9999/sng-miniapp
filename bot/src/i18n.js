@@ -48,6 +48,8 @@ const DICT = {
     paste_truncated_note: "(only the first {max} loads in that text were read - paste the rest separately)",
     paste_unreachable: "Could not reach the loadboard right now - please try again in a moment.",
     welcome_paste: "✨ New: paste or forward a freight post here (Russian or Uzbek, one load or many) - I read it with AI, show you every load, and post them after you tap ✅. /postload still works step by step.",
+    app_open: "📱 Open the SNG ONE app",
+    app_not_configured: "The in-app version is not set up yet - use the website instead.",
     welcome: "Welcome to SNG ONE.\n\n"
       + "• /link - connect your SNG ONE account with your phone number and password (DM only)\n"
       + "• /postload - post a load here; it appears on the web board and is broadcast to every group this bot is in\n"
@@ -213,6 +215,8 @@ const DICT = {
     paste_truncated_note: "(прочитаны только первые {max} грузов из текста - остальное вставьте отдельно)",
     paste_unreachable: "Не удаётся подключиться к бирже прямо сейчас - попробуйте через минуту.",
     welcome_paste: "✨ Новое: вставьте или перешлите сюда пост о грузе (по-русски или по-узбекски, один груз или несколько) - я прочитаю его с помощью AI, покажу каждый груз и опубликую после нажатия ✅. /postload по-прежнему работает пошагово.",
+    app_open: "📱 Открыть приложение SNG ONE",
+    app_not_configured: "Версия внутри Telegram ещё не настроена - используйте сайт.",
     welcome: 'Добро пожаловать в SNG ONE.\n\n'
       + "• /link - привязать аккаунт SNG ONE по номеру телефона и паролю (только в личных сообщениях)\n"
       + '• /postload - разместить груз прямо здесь; он появится на сайте и будет разослан во все группы, где есть этот бот\n'
@@ -378,6 +382,8 @@ const DICT = {
     paste_truncated_note: "(bu matndan faqat birinchi {max} ta yuk oʻqildi - qolganini alohida joylang)",
     paste_unreachable: "Hozir birjaga ulanib boʻlmadi - birozdan soʻng qayta urinib koʻring.",
     welcome_paste: "✨ Yangi: yuk postini shu yerga joylang yoki forward qiling (rus yoki oʻzbek tilida, bitta yoki bir nechta yuk) - AI oʻqiydi, har bir yukni koʻrsatadi va ✅ bosganingizdan keyin joylaydi. /postload avvalgidek bosqichma-bosqich ishlaydi.",
+    app_open: "📱 SNG ONE ilovasini ochish",
+    app_not_configured: "Ilova versiyasi hali sozlanmagan - saytdan foydalaning.",
     welcome: "SNG ONE'ga xush kelibsiz.\n\n"
       + "• /link - SNG ONE hisobingizni telefon raqami va parol bilan ulash (faqat shaxsiy xabarda)\n"
       + '• /postload - shu yerda yuk joylash; u saytda paydo boʻladi va bot qoʻshilgan barcha guruhlarga yuboriladi\n'
