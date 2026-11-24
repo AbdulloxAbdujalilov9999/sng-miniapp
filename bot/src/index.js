@@ -9,6 +9,15 @@ import { makeBot } from './bot.js';
 import { makeBroadcaster } from './broadcaster.js';
 import { publishBotProfile } from './profile.js';
 
+process.on('unhandledRejection', (reason) => {
+  console.error('Unhandled rejection, exiting:', reason);
+  process.exit(1);
+});
+process.on('uncaughtException', (err) => {
+  console.error('Uncaught exception, exiting:', err);
+  process.exit(1);
+});
+
 async function main() {
   const config = loadBotConfig();
   const pool = createBotPool(config);
